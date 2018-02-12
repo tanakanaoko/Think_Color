@@ -33,7 +33,7 @@ void keyPressed() {
 void setup() {
 
   size(500, 500);
-  myPort = new Serial(this, "/dev/cu.wchusbserial14320", 9600);
+  myPort = new Serial(this, "/dev/cu.wchusbserial14340", 9600);
   myPort.bufferUntil(linefeed);
   delay(3000);
 }
@@ -89,15 +89,15 @@ void draw() {
   fill(cr, cg, cb);
   rect(100, 100, 300, 300);
 
-  if (cr>215 && cg>180) { 
+  if (cr<65 && cb>40) { 
     textSize(30);
     fill(0);
     text("SPRING", 50, 50);
-  } else if (cr>215 && cg<180) {
+  } else if (cr>65 && cb<40) {
     textSize(30);
     fill(0);
     text("SUMMER", 50, 50);
-  } else if (cr<215 && cg>180) {
+  } else if (cr<65 && cb<40) {
     textSize(30);
     fill(0);
     text("AUTUMN", 50, 50);
